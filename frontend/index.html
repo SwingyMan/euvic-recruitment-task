@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend</title>
+    <script>
+      function loadData() {
+        var hostname = location.hostname;
+        var output = document.getElementById("output");
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+  output.innerHTML = xhr.responseText;
+};
+xhr.open("GET", "http://" + hostname + ":8080");
+xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="loadData()">Load Data</button>
+    <div id="output"></div>
+  </body>
+</html>

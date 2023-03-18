@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  backend1:
+    build: ./backend1/.
+  backend2:
+    build: ./backend2/.
+  frontend:
+    build: ./frontend/.
+    ports:
+      - 80:80
+  loadbalancer:
+    build: ./loadbalancer/.
+    ports:
+      - 8080:8080
