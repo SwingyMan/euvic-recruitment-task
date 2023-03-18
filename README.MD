@@ -4,8 +4,8 @@ Welcome to my solution! I made a solution for a given task below:
 # How to launch
 While being in the main folder use command:
 ```docker-compose up```
-## Note! 
-If you use localhost enviroment, you need to disable CORS in your web browser to see frontend and backend working.
+>**Note!** 
+>If you use localhost enviroment, you need to disable CORS in your web browser to see frontend and backend working.
 # Folder Structure
 
 |Folder| Purpose  |
