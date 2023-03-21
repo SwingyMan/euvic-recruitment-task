@@ -15,11 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file /backend1/Dockerfile --tag backend1:$(date +%s)
+      run: |
+        cd backend1
+        docker build . --file Dockerfile --tag backend1:$(date +%s)
     - name: Build the Docker image
-      run: docker build . --file /backend2/Dockerfile --tag backend2:$(date +%s)
+      run: |
+        cd backend2
+        docker build . --file Dockerfile --tag backend2:$(date +%s)
     - name: Build the Docker image
-      run: docker build . --file /frontend/Dockerfile --tag frontend:$(date +%s)
+      run: |
+        cd frontend
+        docker build . --file Dockerfile --tag frontend:$(date +%s)
     - name: Build the Docker image
-      run: docker build . --file /loadbalancer/Dockerfile --tag loadbalancer:$(date +%s)
+      run: |
+        cd loadbalancer
+        docker build . --file /loadbalancer/Dockerfile --tag loadbalancer:$(date +%s)
 
