@@ -29,5 +29,5 @@ jobs:
     - name: Build the Docker image
       run: |
         cd loadbalancer
-        docker build . --file /loadbalancer/Dockerfile --tag loadbalancer:$(date +%s)
+        docker build . --file Dockerfile --tag loadbalancer:$(date +%s)
 
