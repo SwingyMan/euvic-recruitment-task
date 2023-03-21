@@ -18,20 +18,20 @@ jobs:
       run: |
         cd backend1
         docker build . --file Dockerfile --tag backend1:$(date +%s)
-        docker push ghcr.io/SwingyMan/backend1:latest
+        docker push ghcr.io/swingyman/backend1:latest
     - name: Build the Docker image
       run: |
         cd backend2
         docker build . --file Dockerfile --tag backend2:$(date +%s)
-        docker push ghcr.io/SwingyMan/backend2:latest
+        docker push ghcr.io/swingyman/backend2:latest
     - name: Build the Docker image
       run: |
         cd frontend
         docker build . --file Dockerfile --tag frontend:$(date +%s)
-        docker push ghcr.io/SwingyMan/frontend:latest
+        docker push ghcr.io/swingyman/frontend:latest
     - name: Build the Docker image
       run: |
         cd loadbalancer
         docker build . --file Dockerfile --tag loadbalancer:$(date +%s)
-        docker push ghcr.io/SwingyMan/loadbalancer:latest
+        docker push ghcr.io/swingyman/loadbalancer:latest
 
