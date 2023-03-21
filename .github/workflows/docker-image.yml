@@ -20,13 +20,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.TOKEN }}
-    - uses: actions/checkout@v3
     -
       name: Build and Push the Backend1 image
       uses: docker/build-push-action@v4
       with:
           push: true
-          tags: swingyman/backend1:latest
+          tags: ghcr.io/swingyman/backend1:latest
           context: ./backend1/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
@@ -34,7 +33,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
           push: true
-          tags: swingyman/backend2:latest
+          tags: ghcr.io/swingyman/backend2:latest
           context: ./backend2/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
@@ -42,7 +41,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
           push: true
-          tags: swingyman/frontend:latest
+          tags: ghcr.io/swingyman/frontend:latest
           context: ./frontend/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
@@ -50,7 +49,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
           push: true
-          tags: swingyman/loadbalancer:latest
+          tags: ghcr.io/swingyman/loadbalancer:latest
           context: ./loadbalancer/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
