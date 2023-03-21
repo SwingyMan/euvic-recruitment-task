@@ -27,22 +27,22 @@ jobs:
       with:
           push: true
           tags: swingyman/backend1:latest
-          context: /backend1
+          context: ./backend1/.
     - name: Build and Push the Backend2 image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/backend2:latest
-          context: /backend2
+          context: ./backend2/.
     - name: Build and Push the Frontend image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/frontend:latest
-          context: /frontend
+          context: ./frontend/.
     - name: Build and Push the Loadbalancer image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/loadbalancer:latest
-          context: /loadbalancer
+          context: ./loadbalancer/.
