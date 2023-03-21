@@ -26,7 +26,7 @@ jobs:
       with:
           push: true
           tags: ghcr.io/swingyman/backend1:latest
-          context: ./backend1/Dockerfile
+          context: ./backend1/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Backend2 image
@@ -34,7 +34,7 @@ jobs:
       with:
           push: true
           tags: ghcr.io/swingyman/backend2:latest
-          context: ./backend2/Dockerfile
+          context: ./backend2/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Frontend image
@@ -42,7 +42,7 @@ jobs:
       with:
           push: true
           tags: ghcr.io/swingyman/frontend:latest
-          context: ./frontend/Dockerfile
+          context: ./frontend/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Loadbalancer image
@@ -50,6 +50,6 @@ jobs:
       with:
           push: true
           tags: ghcr.io/swingyman/loadbalancer:latest
-          context: ./loadbalancer/Dockerfile
+          context: ./loadbalancer/.
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
