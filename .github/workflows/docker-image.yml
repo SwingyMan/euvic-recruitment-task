@@ -28,21 +28,29 @@ jobs:
           push: true
           tags: swingyman/backend1:latest
           context: ./backend1/.
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Backend2 image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/backend2:latest
           context: ./backend2/.
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Frontend image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/frontend:latest
           context: ./frontend/.
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
     - name: Build and Push the Loadbalancer image
       uses: docker/build-push-action@v4
       with:
           push: true
           tags: swingyman/loadbalancer:latest
           context: ./loadbalancer/.
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.TOKEN }}
