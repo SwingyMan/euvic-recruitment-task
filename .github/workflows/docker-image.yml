@@ -14,22 +14,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Login to GH Registry
+      run: docker login ghcr.io -u swingyman --password secrets.token
+    - name: Build and Push the Backend1 image
       run: |
         cd backend1
         docker build . --file Dockerfile --tag backend1:$(date +%s)
         docker push ghcr.io/swingyman/backend1:latest
-    - name: Build the Docker image
+    - name: Build and Push the Backend2 image
       run: |
         cd backend2
         docker build . --file Dockerfile --tag backend2:$(date +%s)
         docker push ghcr.io/swingyman/backend2:latest
-    - name: Build the Docker image
+    - name: Build and Push the Frontend image
       run: |
         cd frontend
         docker build . --file Dockerfile --tag frontend:$(date +%s)
         docker push ghcr.io/swingyman/frontend:latest
-    - name: Build the Docker image
+    - name: Build and Push the Loadbalancer image
       run: |
         cd loadbalancer
         docker build . --file Dockerfile --tag loadbalancer:$(date +%s)
